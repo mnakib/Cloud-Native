@@ -5,7 +5,7 @@ The Open Web Application Security Project (OWASP) is an open, online community t
 
 ## What is OWASP ZAP?
 
-OWASP ZAP (ZAP) is one of the world’s most popular free security tools and is actively maintained by hundreds of international volunteers. It can help to find security vulnerabilities in web applications. It’s also a great tool for experienced pen testers and beginners.
+OWASP ZAP (ZAP) is a widely used open-source Dynamic Application Security Testing (DAST) tool. Designed for developers and functional testers, it operates as a man-in-the-middle proxy, simulating attacks on running web applications to find vulnerabilities like SQL injection and cross-site scripting (XSS). It is one of the world’s most popular free security tools and is actively maintained by hundreds of international volunteers. It can help to find security vulnerabilities in web applications. It’s also a great tool for experienced pen testers and beginners.
 
 ZAP can scan through the web application and detect issues related to:
 
