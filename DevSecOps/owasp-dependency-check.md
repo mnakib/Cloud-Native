@@ -91,7 +91,7 @@ podman run --rm \
     --format "HTML" \
     --out /report \
     --enableExperimental \
-    --nvdApiKey 0c8a7bb6-7f7f-45fc-8c69-a858ffc4c332
+    --nvdApiKey <APIKey>
 ```
 
 **- `--enableExperimental`:** Required to activate the Python Analyzer.
