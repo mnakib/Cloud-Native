@@ -1,3 +1,23 @@
+## What is SonarQube?
+
+SonarQube is a leading, open-source static code analysis platform used to continuously inspect and measure source code quality and security. It identifies bugs, security vulnerabilities, and code smells across 35+ programming languages, supporting CI/CD integration to ensure reliable, maintainable code before production.
+
+Key features and benefits of SonarQube include:
+
+- __Static Code Analysis:__ It automatically analyzes source code without executing it to identify bugs, security vulnerabilities (like SQL injection), and "code smells" (maintainability issues).
+
+- __CI/CD Integration:__ SonarQube plugs into pipelines (Jenkins, GitHub Actions, GitLab, etc.) to automatically check code at every commit, branch, and pull request.
+
+- __Quality Gates:__ It defines actionable, customizable rules (Quality Profiles) and thresholds (Quality Gates) to enforce coding standards and prevent poor-quality code from being merged.
+
+- __Technical Debt Management:__ The tool provides detailed reports, tracking code duplication, complexity, test coverage, and the overall technical debt of a project.
+
+- __Supported Languages:__ It works with over 35 languages including Java, Python, JavaScript, C#, C++, Go, and TypeScript.
+
+- __Deployment Options:__ Available as a self-managed server (SonarQube Server) or a cloud-based solution (SonarQube Cloud).
+
+SonarQube is developed by [SonarSource](https://www.sonarsource.com/products/sonarqube/) and acts as a "shift-left" tool, enabling developers to catch issues early in the development lifecycle.
+
 
 
 
