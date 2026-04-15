@@ -100,7 +100,7 @@ podman run --rm \
 **- `-v ...:/usr/share/dependency-check/data`:** Persists the NVD database locally to save time on future scans.
 
 
-## Run the Scan
+## Check the Scan
 
 Once the scan finishes, open the generated report in your browser.
 
