@@ -16,7 +16,7 @@ Key features and benefits of SonarQube include:
 
 - __Deployment Options:__ Available as a self-managed server (SonarQube Server) or a cloud-based solution (SonarQube Cloud).
 
-SonarQube is developed by [SonarSource](https://www.sonarsource.com/products/sonarqube/) and acts as a "shift-left" tool, enabling developers to catch issues early in the development lifecycle.
+SonarQube is developed by [SonarSource](https://www.sonarsource.com/products/sonarqube/) and acts as a _"shift-left"_ tool, enabling developers to catch issues early in the development lifecycle.
 
 
 
