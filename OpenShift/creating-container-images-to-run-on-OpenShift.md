@@ -57,7 +57,7 @@ podman push localhost/apache-server quay.io/<repository-username>/apache-server
 
 ## Deploy the image from OpenShift
 
-Because this is a private image (unless you make it public), you will need to create a secret containing the private image registry credentials and link it to the account configured inside the deployment to be able to pull the image. The deployment is using the `default` account, so you'll just have to link to it. If you're using a different service account than `default`, the secret has to be linked to that custom service account.
+Because this is a private image (unless you make it public), you will need to create a secret containing the private image registry credentials and link it to the account configured inside the deployment to be able to pull the image. The deployment is using the `default` account by default, so you'll just have to link to it. If you're using a different service account than `default`, the secret has to be linked to that custom service account, but in this example, we'll just make it simple and link the secret to the `default` service account.
 
 Create the secret
 
