@@ -20,9 +20,9 @@ To fix those potential restrictions you may either:
 In this guide, we'll take a default Docker httpd image and tweak to serve on port 8080 instead of port 80, and provide the necessary permissions to the root group on the folders used by Apache, in this case; `/usr/local/apache2/logs`.
 
 
-## The Dockerfile content
+## The Containerfile content
 
-This Dockerfile contains the instructions to create a custom image exposing an httpd container on port 8080 
+This Dockerfile contains the instructions to create a custom image exposing an `httpd` container on port `8080` 
 
 ```Dockerfile
 FROM docker.io/httpd
@@ -41,6 +41,8 @@ CMD ["httpd-foreground"]
 
 ## Create the image and push it Quay.io
 
+We'll need to create an image from above Containerfile, then push to an image registry, public or private, that is accessible to OpenShift. In below example, we'll be using [quay.io](https://quay.io/) registry to push our image.
+
 ```bash
 podman build -t apache-server .
 ```
@@ -50,12 +52,12 @@ podman login quay.io -u <username> -p <password>
 ```
 
 ```bash
-podman push localhost/apache-server quay.io/mnakib/apache-server
+podman push localhost/apache-server quay.io/<repository-username>/apache-server
 ```
 
 ## Deploy the image from OpenShift
 
-Because this is a private image (unless you make it public), you will need to create a secret containing the private image registry credentials and link it to the account configured inside the deployment to be able to pull the image. The deployment is using the `default` account, so you'll just have to link to it. If you're using a different service account than `defautl`, the secret has to be linked to that custom service account.
+Because this is a private image (unless you make it public), you will need to create a secret containing the private image registry credentials and link it to the account configured inside the deployment to be able to pull the image. The deployment is using the `default` account, so you'll just have to link to it. If you're using a different service account than `default`, the secret has to be linked to that custom service account.
 
 Create the secret
 
