@@ -2,20 +2,20 @@
 
 OpenShift does run containers as non-root users by default, which is a core security feature. If your container fails to run on OpenShift, it is likely due to one of these common restrictions: 
 
-__Restricted Security Context Constraints (SCC):__ By default, OpenShift applies the `restricted` or `restricted-v2` SCC. This forces containers to run with a __randomly assigned, high-number UID__ (e.g., 1000670000) rather than the UID defined in the Dockerfile.
+- __Restricted Security Context Constraints (SCC):__ By default, OpenShift applies the `restricted` or `restricted-v2` SCC. This forces containers to run with a __randomly assigned, high-number UID__ (e.g., 1000670000) rather than the UID defined in the Dockerfile.
 
-__Permission Denied Errors:__ Many community images (like standard Nginx or MariaDB) expect to run as root or a specific UID like 1001. When OpenShift forces a random UID, the container may lack permissions to write to its own directories (e.g., `/var/cache/nginx`).
+- __Permission Denied Errors:__ Many community images (like standard Nginx or MariaDB) expect to run as root or a specific UID like 1001. When OpenShift forces a random UID, the container may lack permissions to write to its own directories (e.g., `/var/cache/nginx`).
 
-__Privileged Ports:__ Containers on OpenShift cannot bind to "privileged" ports (below 1024) by default. If your application tries to listen on port 80, it will fail unless you change it to a higher port like 8080.
+- __Privileged Ports:__ Containers on OpenShift cannot bind to "privileged" ports (below 1024) by default. If your application tries to listen on port 80, it will fail unless you change it to a higher port like 8080.
 
 
 To fix those potential restrictions you may either:
 
-__Modifying the Image:__ You may modify the image and make it "OpenShift-ready". by ensuring all required directories (logs, cache, data) are owned by the root group (`gid=0`) and have group-write permissions. Because OpenShift sets the random user's group to 0, the user itself will have the necessary permissions to access those directories. 
+- __Modifying the Image:__ You may modify the image and make it "OpenShift-ready". by ensuring all required directories (logs, cache, data) are owned by the root group (`gid=0`) and have group-write permissions. Because OpenShift sets the random user's group to 0, the user itself will have the necessary permissions to access those directories. 
 
-__Using a Specific SCC:__ If you absolutely must run as a specific user or as root, an administrator can grant your ServiceAccount access to a different SCC, such as `anyuid` or `privileged`, but this is generally not recommended.
+- __Using a Specific SCC:__ If you absolutely must run as a specific user or as root, an administrator can grant your ServiceAccount access to a different SCC, such as `anyuid` or `privileged`, but this is generally not recommended.
 
-__Using OpenShift-Optimized Images:__ Images from the [Red Hat Ecosystem Catalog](https://catalog.redhat.com/en/search?searchType=Containers) (like Red Hat UBI) are pre-configured to work with OpenShift's security constraints out of the box.
+- __Using OpenShift-Optimized Images:__ Images from the [Red Hat Ecosystem Catalog](https://catalog.redhat.com/en/search?searchType=Containers) (like Red Hat UBI) are pre-configured to work with OpenShift's security constraints out of the box.
 
 In this guide, we'll take a default Docker httpd image and tweak to serve on port 8080 instead of port 80, and provide the necessary permissions to the root group on the folders used by Apache, in this case; `/usr/local/apache2/logs`.
 
