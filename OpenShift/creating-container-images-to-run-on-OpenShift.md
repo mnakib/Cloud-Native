@@ -11,7 +11,7 @@ OpenShift does run containers as non-root users by default, which is a core secu
 
 To fix those potential restrictions you may either:
 
-- __Modifying the Image:__ You may modify the image and make it "OpenShift-ready". by ensuring all required directories (logs, cache, data) are owned by the root group (`gid=0`) and have group-write permissions. Because OpenShift sets the random user's group to 0, the user itself will have the necessary permissions to access those directories. 
+- __Modifying the Image:__ You may modify the image and make it "OpenShift-ready". by ensuring all required directories (logs, cache, data) are owned by the root group (`gid=0`) and have group-write permissions. Because OpenShift sets the random user's group to 0, the user itself will have the necessary permissions to access those directories. It's worth noting that making a user part of the `root` group in RHEL does not make them a true `root` user (UID 0). This membership only gives the user read/write access to specific files that happen to be owned by that group. It does not allow you to bypass general system security.
 
 - __Using a Specific SCC:__ If you absolutely must run as a specific user or as root, an administrator can grant your ServiceAccount access to a different SCC, such as `anyuid` or `privileged`, but this is generally not recommended.
 
