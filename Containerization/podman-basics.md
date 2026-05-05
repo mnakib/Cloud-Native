@@ -16,11 +16,13 @@ A container image contains a packaged version of your application, with all the 
 
 ## Installing Podman
 
+Podman is installed by default in RHEL based distributions. If there is not installation found, you may run below command to install it.
+
 ```bash
 sudo yum install container-tools -y
 ```
 
-Checking the version
+Once done, check the Podman installation.
 
 ```bash
 podman -v
