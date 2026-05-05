@@ -104,7 +104,7 @@ CREATE TABLE temperature_data_table (
 ```sql
 SHOW TABLES;
 ```
-```
+
 
 ### 3.3 Extract and View Data
 
