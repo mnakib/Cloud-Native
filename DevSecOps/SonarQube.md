@@ -29,8 +29,8 @@ SonarQube is developed by [SonarSource](https://www.sonarsource.com/products/son
 mkdir sonar-demo && cd sonar-demo
 
 # Create & activate a Python virtual environment
-python3 -m venv sonarqube
-source venv/bin/activate
+python3 -m venv .venv
+source .venv/bin/activate
 
 # Install `pysonar` package
 pip3 install pysonar
