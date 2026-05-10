@@ -149,5 +149,3 @@ the scan report will
 ```
 
 And the scan report will show up automatically on the console.
-
-
