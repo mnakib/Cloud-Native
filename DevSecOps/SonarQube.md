@@ -72,17 +72,19 @@ podman run -d --name sonarqube \
 ```
 
 Breakdown of the flags:
--d: Runs the container in "detached" mode (background).
 
--p 9000:9000: Maps port 9000 of the container to your Mac’s port 9000.
+- `-d`: Runs the container in "detached" mode (background).
 
--e SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true: Critical for Mac/Local dev. It prevents the embedded Elasticsearch from failing due to strict production-level system checks (like vm.max_map_count) that are hard to change on macOS.
+- `-p 9000:9000`: Maps port 9000 of the container to your Mac’s port 9000.
 
-Access it: Open your browser to `http://localhost:9000`.
+- `-e SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true`: Critical for Mac/Local dev. It prevents the embedded Elasticsearch from failing due to strict production-level system checks (like vm.max_map_count) that are hard to change on macOS.
 
-Default Username: admin
+Access the Sonarqube console by opening `http://localhost:9000` in your browser.
 
-Default Password: admin (You will be prompted to change the password immediately.)
+- **Default Username:** `admin`
+
+- **Default Password:** `admin`
+> You will be prompted to change the password immediately.)
 
 
 
@@ -90,39 +92,39 @@ Default Password: admin (You will be prompted to change the password immediately
 
 ### Create the Project
 
-Open your SonarQube console on `http://localhost:9000`.
+Open your **SonarQube** console on `http://localhost:9000`.
 
-Go to Projects > Create Project > Local Project
+- Go to **Projects > Create Project > Local Project**
 
-Provide the required information:
+- Provide the required information:
 
-Project display name: Python Demo Project
-Project key: python-demo-project
+> - **Project display name:** Python Demo Project
+
+> - **Project key:** python-demo-project
 Main branch name: main
 
-Click on Next.
+- Click on **Next**.
 
 Set up new code for project: Follows the instance's default - Current default: Previous version
 _In SonarQube and SonarCloud, the New Code Definition acts like a "quality filter" for your project. Instead of worrying about every error in a massive codebase built over years, it tells the system to only alert you about problems in the code you just wrote or changed. 
-DEV Community
-DEV Community
- +2
+
+
 This follows the Clean as You Code methodology: if you keep every new change clean, the overall quality of your project naturally improves over time._
 
-Click on Create project
+Click on **Create project**
 
 
 ### Analyze the Project
 
 Analysis Method
 
-How do you want to analyze your repository?: Locally
+**How do you want to analyze your repository?:** _Locally_
 
-Provide a token: Generate > Continue
+**Provide a token:** _Generate > Continue_
 
-Run analysis on your project: Python
+**Run analysis on your project:** _Python_
 
-Install the Scanner for Python projects
+Install the Scanner for **Python** projects
 
 ```bash
 pip install pysonar
@@ -147,6 +149,5 @@ the scan report will
 ```
 
 And the scan report will show up automatically on the console.
-
 
 
