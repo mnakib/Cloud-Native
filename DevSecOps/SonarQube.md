@@ -96,33 +96,33 @@ Open your **SonarQube** console on `http://localhost:9000`.
 
 - Go to **Projects > Create Project > Local Project**
 
-- Provide the required information:
+- Main Provide the required information:
 
-> - **Project display name:** Python Demo Project
+    - **Project display name:** _Python Demo Project_
 
-> - **Project key:** python-demo-project
-Main branch name: main
+    - **Project key:** _python-demo-project_
 
-- Click on **Next**.
+    - **Main branch name:** _main_
 
-Set up new code for project: Follows the instance's default - Current default: Previous version
-_In SonarQube and SonarCloud, the New Code Definition acts like a "quality filter" for your project. Instead of worrying about every error in a massive codebase built over years, it tells the system to only alert you about problems in the code you just wrote or changed. 
+    - Click on **Next**.
 
+    - **Set up new code for project:** _Follows the instance's default - Current default: Previous version_
 
-This follows the Clean as You Code methodology: if you keep every new change clean, the overall quality of your project naturally improves over time._
+        > _In SonarQube and SonarCloud, the New Code Definition acts like a "quality filter" for your project. Instead of worrying about every error in a massive codebase built over years, it tells the system to only alert you about problems in the code you just wrote or changed.
+        > This follows the Clean as You Code methodology: if you keep every new change clean, the overall quality of your project naturally improves over time._
 
-Click on **Create project**
+    - Click on **Create project**
 
 
 ### Analyze the Project
 
-Analysis Method
+**Analysis Method**
 
-**How do you want to analyze your repository?:** _Locally_
+- **How do you want to analyze your repository?:** _Locally_
 
-**Provide a token:** _Generate > Continue_
+- **Provide a token:** _Generate > Continue_
 
-**Run analysis on your project:** _Python_
+- **Run analysis on your project:** _Python_
 
 Install the Scanner for **Python** projects
 
@@ -130,12 +130,12 @@ Install the Scanner for **Python** projects
 pip install pysonar
 ```
 
-Execute the Scanner
+Execute the Scanner.
 
 ```bash
 pysonar \
   --sonar-host-url=http://localhost:9000 \
-  --sonar-token=sqp_8976d1e4010b8b0c9b03105832ac936541676328 \
+  --sonar-token=<SonarQubeGeneratedToken> \
   --sonar-project-key=Python-Demo-Project
 ```
 
