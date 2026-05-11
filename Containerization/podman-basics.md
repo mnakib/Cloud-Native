@@ -18,6 +18,9 @@ A container image contains a packaged version of your application, with all the 
 
 Podman is installed by default in RHEL based distributions. If there is not installation found, you may run below command to install it.
 
+> Use a RHEL-based server or one of the [Create and Manage Pods with Podman](https://zero.rhdp.net/lab/zt-rhelbu.zt-podman-pods.prod) sanbox available in the [Red Hat Interactive Labs](https://www.redhat.com/en/interactive-labs/enterprise-linux) portal.
+
+
 ```bash
 sudo yum install container-tools -y
 ```
