@@ -26,7 +26,7 @@ SonarQube is developed by [SonarSource](https://www.sonarsource.com/products/son
 ### Prepare the environment
 ```bash
 # Create a working directory
-mkdir sonar-demo && cd sonar-demo
+mkdir ~/sonar-demo && cd ~/sonar-demo
 
 # Create & activate a Python virtual environment
 python3 -m venv .venv
